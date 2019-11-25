@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <style>
+    Body{
+      text-align: center;
+      animation: gradientBG 15s ease infinite;
+      background: linear-gradient(-45deg, #FF9933, #CCFF00, #50BFE6, #FF3855);
+      background-size: 1500% 1500%;
+    }
+    @keyframes gradientBG {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+    }
+    .rick{
+      color: #5946B2;
+      opacity: 0;
+    }
+    .morty{
+      color: #FF5349;
+      opacity: 0;
+    }
+    h1{
+    color: #EE34D2;
+    }
+    .appear{
+      transition: opacity 1.5s ease-out;
+      opacity: 1;
+    }
+  </style>
+  <h1><span class='rick'>Rick</span> and <span class='morty'> Morty </span>characters!</h1>
+  <p>These are some of the many characters found in the Rick and Morty show. <strong>Wubba lubba dub dub!!</strong></p>
+
+  <ul>
+    <%names.forEach(function(n){%>
+      <li>
+        <%=n.name%>
+        -
+        <%=n.mainCharacter ? 'One of the main characters' : 'Not one of the main characters'%>
+      </li>
+    <%});%>
+  </ul>
+  <script>
+    let rick = document.querySelector('.rick');
+      let morty = document.querySelector('.morty');
+    let makeTextAppear = ()=>{
+      rick.classList.add('appear');
+      morty.classList.add('appear');
+    }
+    setTimeout(makeTextAppear, 100);
+  </script>
+</body>
+</html>

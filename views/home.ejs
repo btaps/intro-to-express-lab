@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Test App</title>
+</head>
+<body>
+	<style>
+		Body{
+			text-align: center;
+			animation: gradientBG 15s ease infinite;
+			background: linear-gradient(-45deg, #FF85CF, #391285, #E97451, #FF00CC);
+			background-size: 1500% 1500%;
+		}
+		@keyframes gradientBG {
+    	0% {
+        background-position: 0% 50%;
+    	}
+    	50% {
+        background-position: 100% 50%;
+    	}
+    	100% {
+        background-position: 0% 50%;
+    		}
+		}
+		.rick{
+			color: #5946B2;
+			opacity: 0;
+		}
+		.morty{
+			color: #FF5349;
+			opacity: 0;
+		}
+		h1{
+			color: #EE34D2;
+		}
+		.appear{
+			transition: opacity 1.5s ease-out;
+			opacity: 1;
+		}
+	</style>
+		<h1><span class='rick'>Home</span><span class='morty'> Page! </span></h1>
+		
+		<p>This was made with intention to practice node express js</p>
+	<script>
+		let rick = document.querySelector('.rick');
+		let morty = document.querySelector('.morty');
+		let makeTextAppear = ()=>{
+			rick.classList.add('appear');
+			morty.classList.add('appear');
+		}
+		setTimeout(makeTextAppear, 100);
+	</script>
+</body>
+</html>
